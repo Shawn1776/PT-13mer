@@ -3,7 +3,7 @@
 
 
 
-
+.gitignore
 
 main
 ranMARS.* ## for ranMAS.h and .cpp
