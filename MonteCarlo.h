@@ -46,7 +46,7 @@ class MonteCarlo{
 // Metroplis_single_monomer
  // precondition: 1) structure-> calculate the totalE = Vlj+Vfene
  //				  2) temperature
-//				  3) random number
+//				  3) random number ( can generated from main function then pass to this function)
 double MonteCarlo::Metroplis_single_monomer(vector<double> &v, double T, double random){
 	double V_lj=0.0, V_fene = 0.0, Eold =0.0, Enew =0.0;
 
