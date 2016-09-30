@@ -55,7 +55,7 @@ double sumVlj(int n, std::vector<double> &v);// input the a[][] Or b[][]
 
  public:
  	// Metroplis update a single monomer of a polymer
- 	double Metroplis_single_monomer(vector<double> &v, double T, int seed);
+	double Metroplis_single_monomer(vector<double> &v, double T, int seed);
 
  };
 
@@ -78,23 +78,24 @@ double calcdist( double a, double b, double c, double x, double y, double z){
 double sumVf( int n, std::vector<double> &v){
 	double Vfene = 0.0;
 	int size = (v.size()+1)/3;
+	cout<<"size is "<<size<<endl;
 	double r = 0.0; 
 	double coefficient = (-1.0/2.0)*K*pow(R,2);
-
 	for (int i=0; i<(size-1); i++){
-		 r = distance(v[i],v[i+size],v[i+size+size],v[i+1],v[i+1+size],v[i+1+size+size]);
-
-
-// 		 // the left boundary of the FENE potential
-// #define R_Fcutoff_l 0.571428571428572   
-// // FENE right boundary  
-// #define R_Fcutoff_r 1.428571428571428
-		if(r)
-		Vf = Vf+log(1-pow(r-r0)/(R),2));
-	}
-	return Vfene;
+		r = calcdist(v[i],v[i+size],v[i+size+size],v[i+1],v[i+1+size],v[i+1+size+size]);
+		cout <<"r "<<r<<endl;
+		// r is in between (R_Fcutoff_l and R_Fcutoff_r)
+		if(r<=R_Fcutoff_l || r>=R_Fcutoff_r){
+			return DBL_MAX;
+		}else{
+			Vfene = Vfene+log(1.0-pow((r-r0)/(R),2));
+		}//if elif
+	}//for 
+		return Vfene;	
 }
 
 
 // calclate the sum of V_Lj on given the coord vector
-double sumVlj(int n, std::vector<double> &v);
+double sumVlj(int n, std::vector<double> &v){
+	return 0.0;
+}
