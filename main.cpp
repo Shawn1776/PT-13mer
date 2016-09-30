@@ -15,7 +15,7 @@ int main(){
 		vv[i] = i*1.0;
 		cout<<vv[i]<<endl;
 	}
-	vv[1]=R_Fcutoff_r;
+	vv[1]=1.2;
 	cout<<vv[1]<<endl;
 	double Vf = sumVf(39,vv); 
 	cout<<"vf:  "<<Vf<<endl;
