@@ -37,24 +37,65 @@ double sumVlj(int size, std::vector<double> &v);// input the a[][] Or b[][]
 class MonteCarlo{
  	public:
  	// Metroplis update a single monomer of a polymer
-	double Metroplis_single_monomer(vector<double> &v, double T, int seed);
+	double Metropolis_single_monomer(vector<double> &v, double T, double p);
 
 
  };
 
-
-// Metroplis_single_monomer
- // precondition: 1) structure-> calculate the totalE = Vlj+Vfene
- //				  2) temperature
+// method: Metroplis_single_monomer
+//  precondition: 1) structure-> calculate the totalE = Vlj+Vfene
+//				  2) temperature
 //				  3) random number ( can generated from main function then pass to this function)
-double MonteCarlo::Metroplis_single_monomer(vector<double> &v, double T, double random){
+//  postcodition: if update accepted, return new E; else return old E 
+double MonteCarlo::Metropolis_single_monomer(vector<double> &v, double T, double p){ // p is a random number between (0,1)
 	double V_lj=0.0, V_fene = 0.0, Eold =0.0, Enew =0.0;
-
-	cout <<"V_lj: "<<V_lj <<endl;
-
-	return 0.0;
+	int size = v.size() / 3;
+//cout<<"size: "<<size<<endl;
+	Eold = sumVf(size, v)+sumVlj(size,v);
+//cout <<"Eold: "<<Eold <<endl;
+	// random select 1 atom from 13 atoms
+	int index = floor(RAN01()*13);
+//cout <<"index is "<<index<<endl;
+	// update x,y,z of index atom, first save the old coords
+	double coord_old[3] = {}; // inital the array to zeros
+	for (int i=0; i<3; i++){
+		// first save the old coords
+		coord_old[i] = v[index+13*i];
+		// generate the new ones within a certain range (=/-0.3 in this case)
+		v[index+13*i] += 0.3*(RAN01()-0.5);
+	}
+	// calculation new E
+	double Vfene_new=sumVf(size, v), Vlj_new = sumVlj(size,v);
+	if (!is_DBL_MAX(Vfene_new,Vlj_new)){
+		// cout <<"do work"<<endl;
+		Enew = sumVf(size, v)+sumVlj(size,v);
+	}else{
+		cout<<"re roll system"<<endl;
+	}
+	
+//	cout <<"Enew: "<<Enew <<endl;
+	// metropolis update according to the Metropolis criterion
+	double deltaE = Enew-Eold;
+	if (deltaE<=0.0){
+		return Enew;
+	}else{
+		double p_acc = exp(-1.0*deltaE/T);    // accepted probobility P_acc
+//		cout <<"p_acct "<<p_acc<<endl;
+		double r = RAN01();                   // random number
+		r=0.1;
+		if( p_acc>r ){ // accepted 
+			return Enew;
+		}else{        // denied 
+			//system rolls back
+			for (int i=0; i<3; i++){
+				v[index+13*i]=coord_old[i];
+			}
+			// return Eold
+			return Eold;
+		} // iner if-else
+	}// outer if-else
 }
- 
+
 double calcdist( double a, double b, double c, double x, double y, double z){	
    return sqrt(pow(a - x, 2) + pow(b - y, 2) + pow(c - z, 2));
 }
@@ -73,7 +114,7 @@ double sumVf(int size, std::vector<double> &v){
 			// cout<<i<<" th distance: "<<setw(15)<< setprecision(10)<<Vfene<<" r is "<<r<<endl; // debug
 		}//if elif
 	}//for 
-		cout <<"sigma: "<<SIGMA<<endl;
+//		cout <<"sigma: "<<SIGMA<<endl;
 		return Vfene;	
 }
 
@@ -94,4 +135,14 @@ double sumVlj(int size, std::vector<double> &v){
 		}//j
 	}//i
 	return VLj;
+}
+
+
+// check if the Vlj or Vfene is DBL_MAX, if is return ture, else return false
+bool is_DBL_MAX(double a, double b){
+	if (DBL_MAX==a) 
+		return true;
+	if (DBL_MAX==b)
+		return true;
+	return false;
 }
