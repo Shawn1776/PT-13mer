@@ -30,16 +30,18 @@ double calcdist(double a, double b, double c, double x, double y, double z);
 //   * 
 //   */
 // std::vector<double> calc_dist_v();
-double  sumVf(int size, std::vector<double> &v);
-double sumVlj(int size, std::vector<double> &v);// input the a[][] Or b[][]
+// calculate V_fene
+double  sumVf(int size, std::vector<double> &v); // pass size to optimize the code, we donot have to since we can calculate from the vector
+// calculate V_Lj
+double sumVlj(int size, std::vector<double> &v); // pass size to optimize the code
+// check if V_fene or V_Lj are still in boundary
+bool is_DBL_MAX(double v_fene, double V_Lj);
 
 
 class MonteCarlo{
  	public:
  	// Metroplis update a single monomer of a polymer
-	double Metropolis_single_monomer(vector<double> &v, double T, double p);
-
-
+	double Metropolis_single_monomer(int size, vector<double> &v, double T);  // pass size to optimize the code
  };
 
 // method: Metroplis_single_monomer
@@ -47,15 +49,11 @@ class MonteCarlo{
 //				  2) temperature
 //				  3) random number ( can generated from main function then pass to this function)
 //  postcodition: if update accepted, return new E; else return old E 
-double MonteCarlo::Metropolis_single_monomer(vector<double> &v, double T, double p){ // p is a random number between (0,1)
+double MonteCarlo::Metropolis_single_monomer(int size, vector<double> &v, double T){ 	
 	double V_lj=0.0, V_fene = 0.0, Eold =0.0, Enew =0.0;
-	int size = v.size() / 3;
-//cout<<"size: "<<size<<endl;
 	Eold = sumVf(size, v)+sumVlj(size,v);
-//cout <<"Eold: "<<Eold <<endl;
 	// random select 1 atom from 13 atoms
-	int index = floor(RAN01()*13);
-//cout <<"index is "<<index<<endl;
+	int index = floor(RAN01()*13);                // initalize at the main function
 	// update x,y,z of index atom, first save the old coords
 	double coord_old[3] = {}; // inital the array to zeros
 	for (int i=0; i<3; i++){
@@ -65,15 +63,20 @@ double MonteCarlo::Metropolis_single_monomer(vector<double> &v, double T, double
 		v[index+13*i] += 0.3*(RAN01()-0.5);
 	}
 	// calculation new E
-	double Vfene_new=sumVf(size, v), Vlj_new = sumVlj(size,v);
+	double Vfene_new=sumVf(size, v), Vlj_new = sumVlj(size,v); // could be optimized on the V_fene()
 	if (!is_DBL_MAX(Vfene_new,Vlj_new)){
 		// cout <<"do work"<<endl;
+		// if V_fene and V_Lj is not out off boundary then do~~~
 		Enew = sumVf(size, v)+sumVlj(size,v);
 	}else{
-		cout<<"re roll system"<<endl;
+		//if V_fene and V_Lj is not out off boundary then re-roll system
+// cout<<"debug V_fene or V_Lj out off boundary"
+		for (int i=0; i<3; i++){
+				v[index+13*i]=coord_old[i];
+			}
+			// return Eold
+			return Eold;
 	}
-	
-//	cout <<"Enew: "<<Enew <<endl;
 	// metropolis update according to the Metropolis criterion
 	double deltaE = Enew-Eold;
 	if (deltaE<=0.0){
@@ -82,7 +85,7 @@ double MonteCarlo::Metropolis_single_monomer(vector<double> &v, double T, double
 		double p_acc = exp(-1.0*deltaE/T);    // accepted probobility P_acc
 //		cout <<"p_acct "<<p_acc<<endl;
 		double r = RAN01();                   // random number
-		r=0.1;
+		//r=0.1;
 		if( p_acc>r ){ // accepted 
 			return Enew;
 		}else{        // denied 
@@ -139,10 +142,12 @@ double sumVlj(int size, std::vector<double> &v){
 
 
 // check if the Vlj or Vfene is DBL_MAX, if is return ture, else return false
-bool is_DBL_MAX(double a, double b){
-	if (DBL_MAX==a) 
+bool is_DBL_MAX(double v_fene, double V_Lj){
+	if (DBL_MAX == v_fene) 
 		return true;
-	if (DBL_MAX==b)
+	if (DBL_MAX == V_Lj)
+		return true;
+	if (DBL_MAX <= v_fene+V_Lj) // check if the sum is outoff boundary, Oct062016, ShawnZ
 		return true;
 	return false;
 }
