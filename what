@@ -1,0 +1,3 @@
+--------------------------------------------------------------------------
+mpirun noticed that process rank 0 with PID 19597 on node smsrg08 exited on signal 11 (Segmentation fault).
+--------------------------------------------------------------------------

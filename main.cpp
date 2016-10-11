@@ -18,7 +18,7 @@ int main(){
 	int size = floor((p1.coordv.size()+1)/3);
 	double temperature = 1.0;
 	// Mento Carlo Updates, each mono-mer
-	int totalMC = 13*100000; //E5 *000; // 100 MC swap
+	int totalMC = 13*100000000; //E5 *000; // 100 MC swap
 	string filename ="E_";
 	for(int tn =0; tn<4; tn++){ // tn-> temperature number
 		double temperature = 1.0;

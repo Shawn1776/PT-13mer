@@ -1,0 +1,2 @@
+run E10^5 for timing purpose :: run time 6m4.449s
+    E10^8 -->  
