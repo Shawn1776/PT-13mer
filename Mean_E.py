@@ -1,13 +1,15 @@
 import re # for rstrip()
 
-f=open("./T_1_STEP_10E7.txt","r")
+#f=open("0_E_1.000000","r")
+f=open("1_E_1.071429","r")
+
 tt = f.readlines()
 f.close()
 #len(tt)
 t_len = len(tt)/2   # drop the first half of data
 t_len = int(t_len)  # cast to int type
 
-t_len = int(100000)
+t_len = int(5000)
 t_rest = tt[t_len:]
 
 #len(t_rest)
