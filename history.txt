@@ -1,0 +1,500 @@
+   46  mpirun -np 2 ./test
+   47  mpirun -np 2 ./test
+   48  mpicc mpiSR.c -o test
+   49  mpirun -np 2 ./test
+   50  clear 
+   51  cd P
+   52  cd PT-13mer/
+   53  make
+   54  make
+   55  make
+   56  make
+   57  make
+   58  clear -L
+   59  clear -L
+   60  make
+   61  make
+   62  ls
+   63  subl MonteCarlo.h
+   64  matlab
+   65  python3
+   66  ipython
+   67  which pip
+   68  ls
+   69  python3
+   70  python3
+   71  eixt
+   72  exit
+   73  cd Desktop/research/Sep\ 2016/
+   74  ;s
+   75  ls
+   76  ls -a
+   77  ls -ah
+   78  ls -lh
+   79  cd PT-13mer/
+   80  git pull
+   81  make
+   82  make
+   83  git pull
+   84  ./main
+   85  make
+   86  make
+   87  clear -L
+   88  make
+   89  make
+   90  make
+   91  ./main
+   92  make
+   93  ./main
+   94  rm main
+   95  make
+   96  ./main
+   97  make
+   98  make
+   99  ./main
+  100  make
+  101  ./main
+  102  make
+  103  ./main
+  104  // TODO, update vvector
+  105  make
+  106  // TODO, update vvector
+  107  ./main
+  108  make
+  109  make
+  110  make
+  111  clear
+  112  make
+  113  make
+  114  make
+  115  make
+  116  clear
+  117  ./main 
+  118  clear
+  119  make
+  120  clear
+  121  make
+  122  clear
+  123  make
+  124  ./main 
+  125  make
+  126  ./main 
+  127  hitory | grep git
+  128  history | grep git
+  129  git commit -a -m "Metropolis added"
+  130  git push origin master
+  131  git push origin master
+  132  clear -l
+  133  ls
+  134  matlab
+  135  sudo dmidecode -t 2
+  136  lspci
+  137  lspci
+  138  clear -L
+  139  lspci
+  140  lspci > lspci.txt
+  141  subl lspci.txt 
+  142  lshw
+  143  lshw > lshw.txt
+  144  subl lshw.txt 
+  145  r m lspci.txt
+  146  rm lspci.txt
+  147  rm lshw.txt 
+  148  vim filename 
+  149  exit
+  150  python 
+  151  cd ~/Desktop/research/
+  152  ls
+  153  cd Sep\ 2016/
+  154  ls
+  155  clear -L
+  156  ls
+  157  cd PT-13mer/
+  158  ls
+  159  make
+  160  ls
+  161  git log
+  162  git pull 
+  163  ls
+  164  ls
+  165  make
+  166  ./main 
+  167  make
+  168  make
+  169  ./main
+  170  make
+  171  ./main
+  172  make
+  173  ./main
+  174  make
+  175  ./main
+  176  make
+  177  ./main
+  178  make
+  179  ./main
+  180  make
+  181  ./main
+  182  make
+  183  rm main
+  184  make
+  185  rm main
+  186  ./main
+  187  make
+  188  make
+  189  make
+  190  ./main
+  191  rm main
+  192  make
+  193  ./main
+  194  make
+  195  ./main
+  196  matlab
+  197  make
+  198  ./main
+  199  make
+  200  ./main
+  201  make
+  202  ./main
+  203  make
+  204  ./main
+  205  make
+  206  ./main
+  207  make
+  208  make
+  209  ./main
+  210  make
+  211  make
+  212  make
+  213  make
+  214  ./main
+  215  make
+  216  ./main
+  217  make
+  218  ./main
+  219  rm main
+  220  make
+  221  rm main
+  222  ./main
+  223  make
+  224  ./main
+  225  make
+  226  ./main
+  227  make
+  228  ./main
+  229  make
+  230  ./main
+  231  make
+  232  ./main
+  233  make
+  234  ./main
+  235  make
+  236  ./main
+  237  make
+  238  make
+  239  ./main
+  240  make
+  241  ./main
+  242  make\
+  243  make
+  244  ./main
+  245  make
+  246  ./main
+  247  make
+  248  ./main
+  249  make
+  250  ./main
+  251  make
+  252  ./main
+  253  make
+  254  main
+  255  git commit -a - m "fixed the V_fene and updata const.s"
+  256  git commit -a -m "fixed the V_fene and updata const.s"
+  257  git push origin master
+  258  git push origin master
+  259  ls
+  260  git log
+  261  ls
+  262  make
+  263  ./main 
+  264  make
+  265  ./main 
+  266  make
+  267  ./main 
+  268  mitbbs
+  269  ./main 
+  270  make
+  271  ./main 
+  272  make
+  273  make
+  274  ./main 
+  275  make
+  276  ./main 
+  277  make
+  278  ./main 
+  279  make
+  280  ./main 
+  281  make
+  282  ./main 
+  283  make
+  284  ./main 
+  285  make
+  286  ./main 
+  287  make
+  288  make
+  289  ./main 
+  290  make
+  291  ./main 
+  292  matlab
+  293  make
+  294  make
+  295  make
+  296  make
+  297  make
+  298  clear -L
+  299  clear -L
+  300  make
+  301  ./ain
+  302  ./main
+  303  maske
+  304  make
+  305  make
+  306  make
+  307  clear -L
+  308  make
+  309  ./main
+  310  make
+  311  ./main
+  312  make
+  313  ./main
+  314  make
+  315  ./main
+  316  make
+  317  ./main
+  318  make
+  319  ./main
+  320  make
+  321  make
+  322  ./main
+  323  make
+  324  ./main
+  325  make
+  326  make
+  327  ./main
+  328  make
+  329  ./main
+  330  git commit -a -m "add Vlj"
+  331  git push origin master
+  332  make
+  333  make
+  334  make
+  335  ./main
+  336  make
+  337  ./main
+  338  make
+  339  make
+  340  ./main
+  341  nvidia --version
+  342  git pull
+  343  ls
+  344  subl MonteCarlo.h
+  345  ls
+  346  make
+  347  make
+  348  make
+  349  ./main
+  350  make
+  351  ./main
+  352  make
+  353  make
+  354  ./main
+  355  make
+  356  ./main
+  357  make
+  358  ./main
+  359  make
+  360  ./main
+  361  make
+  362  make
+  363  ./main
+  364  make
+  365  ./main
+  366  make
+  367  ./main
+  368  make
+  369  make
+  370  make
+  371  make
+  372  ./main
+  373  ./main
+  374  make
+  375  ./main
+  376  make
+  377  ./main
+  378  make
+  379  ./main
+  380  make
+  381  ./main
+  382  make
+  383  make
+  384  time ./main > T_1_STEP_10E7.txt
+  385  python3
+  386  python3 Mean_E.py 
+  387  python3 Mean_E.py 
+  388  python3 Mean_E.py 
+  389  python3 Mean_E.py 
+  390  make
+  391  python3 Mean_E.py 
+  392  gnuplot
+  393  python3 Mean_E.py 
+  394  gnuplot
+  395  python3 Mean_E.py 
+  396  git commit -a -m "1 single core pipeline done, py_stat.01 added"
+  397  git push origin master
+  398   dmidecode -t 2
+  399  make
+  400  make
+  401  make
+  402  clear -L
+  403  make
+  404  make
+  405  make
+  406  make
+  407  clear
+  408  clear 
+  409  make
+  410  make
+  411  make
+  412  ./main
+  413  ls
+  414  vim filename
+  415  make
+  416  ./main
+  417  ls
+  418  make
+  419  ./main
+  420  ls
+  421  rm 1.0*
+  422  rm 1.0*
+  423  rm 1.0*
+  424  rm 1.0*
+  425  rm 1.0*
+  426  rm 1.0*
+  427  rm *1.0*
+  428  make
+  429  ./main
+  430  ls
+  431  make
+  432  ./main
+  433  ls
+  434  vim E_1.000000 
+  435  make
+  436  make
+  437  make
+  438  make
+  439  ./main
+  440  make
+  441  time ./main
+  442  ls
+  443  vim E_1.000000 
+  444  rm main
+  445  make
+  446  ./main 
+  447  ls
+  448  vim E_1.100000 
+  449  ls
+  450  make
+  451  ssh -X shzhang1@sapelo1.gacrc.uga.edu
+  452  exit
+  453  ls
+  454  vim logCot07.txt 
+  455  vim logCot07.txt
+  456  make
+  457  time ./main
+  458  ls
+  459  vim E_
+  460  vim E_1.100000 
+  461  gnuplot
+  462  ls
+  463  clear -L
+  464  clear
+  465  clear
+  466  ls
+  467  subl
+  468  make
+  469  ./main
+  470  make
+  471  subl
+  472  make
+  473  time ./main
+  474  ls
+  475  vim main.cpp 
+  476  vim main.cpp 
+  477  ls
+  478  vim Mean_E.py
+  479  git pull
+  480  ls
+  481  exit
+  482  bg
+  483  fg
+  484  bg
+  485  bg
+  486  git pull
+  487  ls
+  488  vim Mean_E.py 
+  489  vim .gitignore 
+  490  git rm --cached
+  491  git status
+  492  git add Mean_E.py 
+  493  git pull
+  494  git status
+  495  git stash
+  496  git pull
+  497  vim M
+  498  vim Mean_E.py 
+  499  git stash list
+  500  mpic++ mpi_main.cpp -o mpi
+  501  mpic++ mpi_main.cpp -o mpi
+  502  clear 
+  503  mpic++ mpi_main.cpp -o mpi
+  504  mpic++ mpi_main.cpp -o mpi
+  505  mpic++ mpi_main.cpp -o mpi
+  506  clear 
+  507  mpic++ mpi_main.cpp -o mpi
+  508  clear -L
+  509  mpic++ mpi_main.cpp -o mpi
+  510  mpic++ -std=c++11 mpi_main.cpp -o mpi 
+  511  clear -L
+  512  mpic++ -std=c++11 mpi_main.cpp -o mpi 
+  513  mpic++ -std=c++11 ranMARS.cpp mpi_main.cpp -o mpi 
+  514  ./mpi
+  515  mpirun -np 4 ./mpi
+  516  make
+  517  mpic++ -std=c++11 ranMARS.cpp mpi_main.cpp -o mpi
+  518  mpirun -np 4 ./mpi
+  519  make
+  520  run
+  521  run
+  522  mpirun -np 4 ./mpi
+  523  clear -L
+  524  make
+  525  run
+  526  . ~/.bashrc
+  527  run
+  528  make
+  529  run
+  530  clear -l
+  531  run
+  532  make
+  533  run
+  534  make
+  535  make
+  536  run
+  537  make   
+  538  vim makefile 
+  539  g++ -std=c++11 ranMARS.cpp mpi_main.cpp -o single_mpi
+  540  g++ -std=c++11 ranMARS.cpp mpi_main.cpp -o single_mpi
+  541  g++ -std=c++11 ranMARS.cpp mpi_main.cpp -o single_mpi -lm
+  542  ./single_mpi 
+  543  git add -a
+  544  git add -A
+  545  history >> history.txt
