@@ -1,2 +1,8 @@
-run E10^5 for timing purpose :: run time 6m4.449s
-    E10^8 -->  4.16days
+run E10^5 for timing purpose :: run time 6m4.449s for 10 temperature.
+1 10^5 job --> 36 sec, 10^6 job --> 360sec --> 
+    E10^8 -->  4.16days   4 temperature ---->real	2789m19.633s=46.48hrtherefore, each temperature needs 11-12hrs, I can reduce it by half by change the single update Motroplis function
+ 
+
+banchmake --> YiFan said 10sec for a 10^E6 job, 30 time better than my code?
+
+
